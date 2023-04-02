@@ -1,0 +1,22 @@
+{
+  "name": "github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noculant/noculant.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noculant/noculant.github.io/issues"
+  },
+  "homepage": "https://github.com/noculant/noculant.github.io#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.1"
+  }
+}
