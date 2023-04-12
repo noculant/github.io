@@ -5,7 +5,7 @@ class RentalIncomeRecord:
     def add_income(self, apartment_number, month, amount):
         if apartment_number not in self.income_records:
             self.income_records[apartment_number] = {}
-        
+
         self.income_records[apartment_number][month] = amount
 
     def get_income(self, apartment_number, month):

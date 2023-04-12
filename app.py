@@ -29,29 +29,31 @@ def tenant_list():
     return render_template("tenant_list.html", tenants=sorted(landlord.tenant_list, key=lambda x: x.apartment_number))
 
 
-@app.route('/record_rental_income', methods=['GET', 'POST'])
-def record_rental_income():
+@app.route('/record_rental_payment', methods=['GET', 'POST'])
+def record_rental_payment():
     if request.method == 'POST':
-        apartment_number = request.form['apt_number']
+        apartment_number = request.form['apartment_number']
+        month = request.form['month']
         amount = float(request.form['amount'])
-        date = request.form['date']
-        landlord.record_rental_income(apartment_number, amount, date)
+        landlord.rental_income_record.add_income(apartment_number, month, amount)
         return redirect(url_for('rental_income_record'))
-    return render_template('record_rental_income.html', tenants=landlord.tenant_list)
+    return render_template('record_rental_payment.html')
 
 @app.route('/rental_income_record')
 def rental_income_record():
-    return render_template('rental_income_record.html', rental_income_record=landlord.rental_income_record)
+    return render_template('rental_income_record.html', income_records=landlord.rental_income_record.income_records)
 
 @app.route('/record_expense', methods=['GET', 'POST'])
 def record_expense():
     if request.method == 'POST':
-        description = request.form['description']
+        category = request.form['category']
+        payee = request.form['payee']
         amount = float(request.form['amount'])
         date = request.form['date']
-        landlord.record_expense(description, amount, date)
-        return redirect(url_for('expense_record'))
+        landlord.expense_record.add_expense(date, payee, amount, category) # connect front end to back end
+        return redirect(url_for('index'))
     return render_template('record_expense.html')
+
 
 @app.route('/expense_record')
 def expense_record():
