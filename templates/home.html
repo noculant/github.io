@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+</head>
+<body>
+    <h1>Main Menu</h1>
+    <ul>
+        <li><a href="{{ url_for('add_tenant') }}">Add New Tenant</a></li>
+        <li><a href="{{ url_for('tenant_list') }}">Show Tenant List</a></li>
+        <li><a href="{{ url_for('record_rent_payment') }}">Record Rental Payment</a></li>
+        <li><a href="{{ url_for('rental_income_record') }}">Show Rental Income Record</a></li>
+        <li><a href="{{ url_for('record_expense') }}">Record Expense</a></li>
+        <li><a href="{{ url_for('expense_record') }}">Show Expense Record</a></li>
+        <li><a href="{{ url_for('annual_report') }}">Show Annual Report</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Add Tenant</h1>
+    <form method="POST" action="{{ url_for('add_tenant') }}">
+        <div>
+            <label for="apt_number">Apartment Number:</label>
+            <input type="number" name="apt_number" id="apt_number" placeholder="Apartment Number" required>
+        </div>
+        <div>
+            <label for="name">Tenant Name:</label>
+            <input type="text" name="name" id="name" placeholder="Tenant Name" required>
+        </div>
+        <div>
+            <label for="rate">Monthly Rent Rate:</label>
+            <input type="number" name="rate" id="rate" placeholder="Monthly Rent Rate" step="0.01" required>
+        </div>
+        <input type="submit" value="Add Tenant">
+    </form>
+{% endblock %}
