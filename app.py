@@ -35,7 +35,8 @@ def record_rental_payment():
         apartment_number = request.form['apartment_number']
         month = request.form['month']
         amount = float(request.form['amount'])
-        landlord.rental_income_record.add_income(apartment_number, month, amount)
+        
+        landlord.rental_income_record.add_income(month, apartment_number, amount)
         return redirect(url_for('rental_income_record'))
     return render_template('record_rental_payment.html')
 
@@ -59,13 +60,13 @@ def record_expense():
 def expense_record():
     return render_template('expense_record.html', expense_record=landlord.expense_record)
 
-@app.route('/annual_report', methods=['GET', 'POST'])
+@app.route('/annual_report')
 def annual_report():
-    if request.method == 'POST':
-        year = int(request.form['year'])
-        report = landlord.get_annual_report(year)
-        return render_template('annual_report.html', report=report)
-    return render_template('annual_report.html', report=None)
+    # Generate the annual report
+    report = landlord.generate_annual_report()
+
+    # Pass the 'annual_report' variable to the template
+    return render_template('annual_report.html', annual_report=report)
 
 if __name__ == '__main__':
     app.run(debug=True)

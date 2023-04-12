@@ -20,5 +20,21 @@ class Landlord:
     def record_expense(self, description, amount, date):
         self.expense_record.add_expense(description, amount, date)
 
-    def get_annual_report(self, year):
-        return self.annual_report.get_report(year)
+    def generate_annual_report(self):
+        # Calculate total rental income
+        total_rental_income = self.rental_income_record.get_total_income()
+
+        # Calculate total expenses
+        total_expenses = self.expense_record.get_total_expenses()
+
+        # Calculate net income
+        net_income = total_rental_income - total_expenses
+
+        # Create the annual report object
+        annual_report = {
+            "total_rental_income": total_rental_income,
+            "total_expenses": total_expenses,
+            "net_income": net_income
+        }
+
+        return annual_report

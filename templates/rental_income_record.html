@@ -1,25 +1,19 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>Rental Income Record</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Apartment Number</th>
-                <th>Month</th>
-                <th>Income</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for apartment, income_data in income_records.items() %}
-                {% for month, income in income_data.items() %}
-                    <tr>
-                        <td>{{ apartment }}</td>
-                        <td>{{ month }}</td>
-                        <td>{{ income }}</td>
-                    </tr>
-                {% endfor %}
-            {% endfor %}
-        </tbody>
-    </table>
+<h1>Rental Income Record</h1>
+<table>
+    <tr>
+        <th>Apartment Number</th>
+        <th>Month</th>
+        <th>Amount</th>
+    </tr>
+    {% for income_record in income_records %}
+    <tr>
+        <td>{{ income_record.apartment_number }}</td>
+        <td>{{ income_record.month }}</td>
+        <td>{{ income_record.amount }}</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}
