@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Expense Record</h1>
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Payee</th>
+        <th>Amount</th>
+        <th>Category</th>
+    </tr>
+    {% for expense in expense_record.expenses %}
+    <tr>
+        <td>{{ expense.date }}</td>
+        <td>{{ expense.payee }}</td>
+        <td>{{ expense.amount }}</td>
+        <td>{{ expense.category }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

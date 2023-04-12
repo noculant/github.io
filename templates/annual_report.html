@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Annual Report</h1>
+<p>Total Rental Income: {{ annual_report.total_rental_income }}</p>
+<p>Total Expenses: {{ annual_report.total_expenses }}</p>
+<p>Net Income: {{ annual_report.net_income }}</p>
+{% endblock %}
