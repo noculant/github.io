@@ -1,8 +1,23 @@
-{% extends "index.html" %}
+{% extends "layout.html" %}
 
 {% block content %}
-<h1>Annual Report</h1>
-<p>Total Rental Income: {{ annual_report.total_rental_income }}</p>
-<p>Total Expenses: {{ annual_report.total_expenses }}</p>
-<p>Net Income: {{ annual_report.net_income }}</p>
+    <h1 class="my-4">Annual Report</h1>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Total Rental Income:</h4>
+            <p class="card-text display-4">{{ annual_report.total_rental_income }}</p>
+        </div>
+    </div>
+    <div class="card my-4">
+        <div class="card-body">
+            <h4 class="card-title">Total Expenses:</h4>
+            <p class="card-text display-4">{{ annual_report.total_expenses }}</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Net Profit:</h4>
+            <p class="card-text display-4">{{ annual_report.net_income }}</p>
+        </div>
+    </div>
 {% endblock %}
