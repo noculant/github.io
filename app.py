@@ -35,9 +35,9 @@ def record_rental_payment():
         apartment_number = request.form['apartment_number']
         month = request.form['month']
         amount = float(request.form['amount'])
-        
+
         landlord.rental_income_record.add_income(month, apartment_number, amount)
-        return redirect(url_for('rental_income_record'))
+        return redirect(url_for('index'))
     return render_template('record_rental_payment.html')
 
 @app.route('/rental_income_record')
