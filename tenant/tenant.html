@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RentManager - Tenant Management</title>
+	<link rel="stylesheet" type="text/css" href="tenant.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Tenant Management</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Apartment Number</th>
+					<th>Rate</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody id="tenant-list">
+				<!-- Tenant data will be dynamically added here -->
+			</tbody>
+		</table>
+
+		<div class="add-tenant">
+			<h2>Add New Tenant</h2>
+			<form id="add-tenant-form">
+				<label for="tenant-name">Name:</label>
+				<input type="text" id="tenant-name" name="tenant-name">
+
+				<label for="apartment-number">Apartment Number:</label>
+				<input type="text" id="apartment-number" name="apartment-number">
+
+				<label for="rate">Rate:</label>
+				<input type="text" id="rate" name="rate">
+
+				<input type="submit" value="Add Tenant">
+			</form>
+		</div>
+	</div>
+
+	<script src="tenat.js"></script>
+</body>
+</html>
+
