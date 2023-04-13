@@ -42,4 +42,6 @@ class ExpenseRecord:
 
         category: The category to calculate the sum for
         """
+
+        # Iterate through the expense records, and if the input category matches, add to sum
         return sum(expense['amount'] for expense in self.expense_records if expense['category'] == category)
