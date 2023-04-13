@@ -50,7 +50,7 @@ class AnnualReport:
             total_expenses_by_category[category] = self.expense_record.get_total_expenses_by_category(category)
 
         # Get total money made
-        total_rental_income = self.rental_income_record.get_total_rental_income()
+        total_rental_income = self.rental_income_record.get_total_income()
 
         # Get total money spent
         total_expenses = self.expense_record.get_total_expenses()
