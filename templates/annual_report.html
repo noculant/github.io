@@ -17,7 +17,28 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Net Profit:</h4>
-            <p class="card-text display-4">{{ annual_report.net_income }}</p>
+            <p class="card-text display-4">{{ annual_report.profit }}</p>
+        </div>
+    </div>
+
+    <div class="card my-4">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Category</th>
+                        <th scope="col">Total Expense</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for category, total_expense in annual_report.total_expenses_by_category.items() %}
+                        <tr>
+                            <td>{{ category }}</td>
+                            <td>{{ total_expense }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 {% endblock %}

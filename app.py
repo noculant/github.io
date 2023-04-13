@@ -16,7 +16,7 @@ def index():
 @app.route('/add_tenant', methods=['GET', 'POST'])
 def add_tenant():
     if request.method == 'POST':
-        apartment_number = request.form['apt_number']
+        apartment_number = request.form['apartment_number']
         name = request.form['name']
         rate = float(request.form['rate'])
         landlord.add_tenant(apartment_number, name, rate)
@@ -62,10 +62,7 @@ def expense_record():
 
 @app.route('/annual_report')
 def annual_report():
-    # Generate the annual report
-    report = landlord.generate_annual_report()
-
-    # Pass the 'annual_report' variable to the template
+    report = landlord.annual_report.generate_annual_report()
     return render_template('annual_report.html', annual_report=report)
 
 if __name__ == '__main__':
