@@ -36,4 +36,10 @@ class ExpenseRecord:
         return sum([record['amount'] for record in self.expense_records])
 
     def get_total_expenses_by_category(self, category):
+        """
+        Calculates the sum of the total expenses for a single category
+        passed as a parameter.
+
+        category: The category to calculate the sum for
+        """
         return sum(expense['amount'] for expense in self.expense_records if expense['category'] == category)

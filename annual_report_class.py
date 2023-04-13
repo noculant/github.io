@@ -1,13 +1,15 @@
 class AnnualReport:
     """
-    Represents
+    Represents the annual report which calculates totals for each category 
+    of expenses, the total income from tenants, and the net profit for
+    the landlord.
     """
     def __init__(self, rental_income_record, expense_record):
         """
         Constructs an instance of the rental income record
         and the expense record.
 
-        expense_records: The list of expenses
+        expense_records: The list of expenses created
         """
         self.rental_income_record = rental_income_record
         self.expense_record = expense_record
