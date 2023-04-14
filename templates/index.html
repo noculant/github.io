@@ -2,14 +2,13 @@
 
 {% block content %} <!-- Override template -->
   <h1>Rent Manager</h1>  <!-- Level 1 heading -->
-  <ul>  <!-- Unordered bulletted list -->
-    <!-- Links together HTML files to title of link -->
-    <li><a href="{{ url_for('add_tenant') }}">Add New Tenant</a></li>  
-    <li><a href="{{ url_for('tenant_list') }}">Show Tenant List</a></li>
-    <li><a href="{{ url_for('record_rental_payment') }}">Input Rental Payment</a></li>
-    <li><a href="{{ url_for('rental_income_record') }}">Show Rental Income Record</a></li>
-    <li><a href="{{ url_for('record_expense') }}">Input Expense</a></li>
-    <li><a href="{{ url_for('expense_record') }}">Show Expense Record</a></li>
-    <li><a href="{{ url_for('annual_report') }}">Show Annual Report</a></li>
-  </ul>  <!-- Ends the nordered bulletted list -->
+  <div class="button-list"> <!-- List of buttons-->>
+    <button onclick="location.href='/add_tenant'">Add New Tenant</button>
+    <button onclick="location.href='/tenant_list'">Show Tenant List</button>
+    <button onclick="location.href='/record_rental_payment'">Input Rental Payment</button>
+    <button onclick="location.href='/rental_income_record'">Show Rental Income Record</button>
+    <button onclick="location.href='/record_expense'">Input Expense</button>
+    <button onclick="location.href='/expense_record'">Show Expense Record</button>
+    <button onclick="location.href='/annual_report'">Show Annual Report</button>
+  </div>
 {% endblock %} <!-- End override block -->

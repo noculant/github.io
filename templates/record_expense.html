@@ -1,7 +1,7 @@
 {% extends "layout.html" %} <!-- Load template -->
 
 {% block content %} <!-- Override template -->
-    <h1>Record Expense</h1> <!-- Level 1 heading -->
+    <h1>Input Expense</h1> <!-- Level 1 heading -->
     <form action="{{ url_for('record_expense') }}" method="post">  <!-- Starts HTML form element for sending data to server-->
         <label for="date">Date:</label> <!-- Description of user input box -->
         <input type="date" id="date" name="date" required> <!-- Creates a new date input field -->

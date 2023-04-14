@@ -1,7 +1,7 @@
 {% extends "layout.html" %} <!-- Load template -->
 
 {% block content %} <!-- Override template -->
-    <h1>Record Rental Payment</h1> <!-- Level 1 heading -->
+    <h1>Input Rental Payment</h1> <!-- Level 1 heading -->
     <form action="{{ url_for('record_rental_payment') }}" method="post"> <!-- Starts HTML form element for sending data to server-->
         <label for="apartment_number">Apartment Number:</label> <!-- Description of user input box -->
         <input type="number" id="apartment_number" name="apartment_number" required> <!-- Creates a num input field -->
