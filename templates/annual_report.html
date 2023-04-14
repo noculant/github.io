@@ -1,26 +1,7 @@
 {% extends "layout.html" %} <!-- Load template -->
 
 {% block content %} <!-- Override template -->
-    <h1 class="my-4">Annual Report</h1> <!-- Level 1 heading -->
-    <div class="card"> <!-- Card class for styling -->
-        <div class="card-body"> <!-- Card body for styling -->
-            <h4 class="card-title">Total Rental Income:</h4> <!-- Card title for styling -->
-            <p class="card-text display-4">{{ annual_report.total_rental_income }}</p> <!-- Paragraph -->
-        </div> <!-- End div-->
-    </div> <!-- End div-->
-    <div class="card my-4">  <!-- Card class for styling (my-4) -->
-        <div class="card-body"> <!-- Card body for styling -->
-            <h4 class="card-title">Total Expenses:</h4> <!-- Card title for styling -->
-            <p class="card-text display-4">{{ annual_report.total_expenses }}</p> <!-- Paragraph -->
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body"> <!-- Card body for styling -->
-            <h4 class="card-title">Net Profit:</h4> <!-- Card title for styling -->
-            <p class="card-text display-4">{{ annual_report.profit }}</p> <!-- Paragraph -->
-        </div> <!-- End div-->
-    </div> <!-- End div-->
-
+    <h1 align="center">Annual Report</h1> <!-- Level 1 heading -->
     <div class="card my-4"> <!-- Card class for styling (my-4) -->
         <div class="card-body"> <!-- Card body for styling -->
             <table class="table"> <!-- Creates a table element -->
@@ -43,4 +24,24 @@
             </table> <!-- End table -->
         </div> <!-- End div-->
     </div> <!-- End div-->
+
+    <div class="card" align="center" > <!-- Card class for styling -->
+        <div class="card-body"> <!-- Card body for styling -->
+            <h4 class="card-title">Total Rental Income:</h4> <!-- Card title for styling -->
+            <p class="card-text display-4">{{ annual_report.total_rental_income }}</p> <!-- Paragraph -->
+        </div> <!-- End div-->
+    </div> <!-- End div-->
+    <div class="card my-4" align="center" >  <!-- Card class for styling (my-4) -->
+        <div class="card-body"> <!-- Card body for styling -->
+            <h4 class="card-title">Total Expenses:</h4> <!-- Card title for styling -->
+            <p class="card-text display-4">{{ annual_report.total_expenses }}</p> <!-- Paragraph -->
+        </div>
+    </div>
+    <div class="card" align="center">
+        <div class="card-body"> <!-- Card body for styling -->
+            <h4 class="card-title">Net Profit:</h4> <!-- Card title for styling -->
+            <p class="card-text display-4">{{ annual_report.profit }}</p> <!-- Paragraph -->
+        </div> <!-- End div-->
+    </div> <!-- End div-->
+
 {% endblock %} <!-- End override block -->

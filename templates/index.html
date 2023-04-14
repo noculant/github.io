@@ -1,13 +1,13 @@
 {% extends 'layout.html' %} <!-- Inherit template -->
 
 {% block content %} <!-- Override template -->
-  <h1>Rent Manager</h1>  <!-- Level 1 heading -->
+  <h1 align="center">Rent Manager</h1>  <!-- Level 1 heading -->
   <div class="button-list"> <!-- List of buttons-->>
     <button onclick="location.href='/add_tenant'">Add New Tenant</button>
-    <button onclick="location.href='/tenant_list'">Show Tenant List</button>
     <button onclick="location.href='/record_rental_payment'">Input Rental Payment</button>
-    <button onclick="location.href='/rental_income_record'">Show Rental Income Record</button>
     <button onclick="location.href='/record_expense'">Input Expense</button>
+    <button onclick="location.href='/tenant_list'">Show Tenant List</button>
+    <button onclick="location.href='/rental_income_record'">Show Rental Income Record</button>
     <button onclick="location.href='/expense_record'">Show Expense Record</button>
     <button onclick="location.href='/annual_report'">Show Annual Report</button>
   </div>
