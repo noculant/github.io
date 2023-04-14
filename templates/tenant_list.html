@@ -1,23 +1,25 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} <!-- Load template -->
 
-{% block content %}
-  <h1>Tenant List</h1>
-  <table>
-    <thead>
-      <tr>
+{% block content %} <!-- Override template -->
+  <h1>Tenant List</h1> <!-- Level 1 heading -->
+  <table> <!-- Creates a HTML table element -->
+    <thead> <!-- Group header content together -->
+      <tr> <!-- New table row -->
+        <!-- 3 table headers -->
         <th>Name</th>
         <th>Apartment Number</th>
         <th>Rent Rate</th>
-      </tr>
-    </thead>
-    <tbody>
+      </tr> <!-- End table row -->
+    </thead> <!-- Group header content together -->
+    <tbody> <!-- Table body element -->
       {% for tenant in tenants %}
-        <tr>
+        <tr> <!-- New table row -->
+          <!-- 3 table headers -->
           <td>{{ tenant.apartment_number }}</td>
           <td>{{ tenant.name }}</td>
           <td>{{ tenant.rate }}</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-{% endblock %}
+        </tr> <!-- End table row -->
+      {% endfor %} <!-- End for loop -->
+    </tbody> <!-- End table body element -->
+  </table> <!-- End table -->
+{% endblock %} <!-- End override block -->

@@ -1,22 +1,22 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} <!-- Load template -->
 
-{% block content %}
-<h1>Add New Tenant</h1>
-<form action="{{ url_for('add_tenant') }}" method="post">
-    <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+{% block content %} <!-- Override template -->
+<h1>Add New Tenant</h1> <!-- Level 1 heading -->
+<form action="{{ url_for('add_tenant') }}" method="post"> <!-- Starts HTML form element for sending data to server-->
+    <div class="form-group"> <!-- Start a new group -->
+        <label for="name">Name:</label> <!-- Description of user input box -->
+        <input type="text" id="name" name="name" required> <!-- Creates a new text input field -->
     </div>
-    <div class="form-group">
-        <label for="apartment_number">Apartment Number:</label>
-        <input type="number" id="apartment_number" name="apartment_number" required>
+    <div class="form-group"> <!-- Start a new group -->
+        <label for="apartment_number">Apartment Number:</label> <!-- Description of user input box -->
+        <input type="number" id="apartment_number" name="apartment_number" required> <!-- Creates a new num input field -->
     </div>
-    <div class="form-group">
-        <label for="rate">Rent Rate:</label>
-        <input type="number" id="rate" name="rate" step="0.01" required>
+    <div class="form-group"> <!-- Start a new group -->
+        <label for="rate">Rent Rate:</label> <!-- Description of user input box -->
+        <input type="number" id="rate" name="rate" required>  <!-- Creates a num input field -->
     </div>
-    <div class="form-group">
-        <input type="submit" value="Submit">
+    <div class="form-group"> <!-- Start a new group -->
+        <input type="submit" value="Submit"> <!-- Create a clickable button -->
     </div>
-</form>
-{% endblock %}
+</form> <!-- Closes the form element -->
+{% endblock %} <!-- End override block -->

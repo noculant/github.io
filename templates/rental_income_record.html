@@ -1,19 +1,21 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} <!-- Load template -->
 
-{% block content %}
-<h1>Rental Income Record</h1>
-<table>
-    <tr>
+{% block content %} <!-- Override template -->
+<h1>Rental Income Record</h1> <!-- Level 1 heading -->
+<table> <!-- Creates a HTML table element -->
+    <tr> <!-- New table row -->
+        <!-- 3 table headers -->
         <th>Apartment Number</th>
         <th>Month</th>
         <th>Amount</th>
-    </tr>
-    {% for income_record in income_records %}
-    <tr>
+    </tr> <!-- End table row -->
+    {% for income_record in income_records %} <!-- Iterate through income records -->
+    <tr> <!-- New table row -->
+        <!-- 3 table data elements -->
         <td>{{ income_record.apartment_number }}</td>
         <td>{{ income_record.month }}</td>
         <td>{{ income_record.amount }}</td>
-    </tr>
-    {% endfor %}
-</table>
-{% endblock %}
+    </tr> <!-- End table row -->
+    {% endfor %} <!-- End for loop -->
+</table> <!-- End table -->
+{% endblock %} <!-- End override block -->

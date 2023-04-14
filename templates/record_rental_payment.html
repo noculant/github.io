@@ -1,22 +1,22 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} <!-- Load template -->
 
-{% block content %}
-<h1>Record Rental Payment</h1>
-<form action="{{ url_for('record_rental_payment') }}" method="post">
-    <div>
-        <label for="apartment_number">Apartment Number:</label>
-        <input type="number" id="apartment_number" name="apartment_number" required>
+{% block content %} <!-- Override template -->
+<h1>Record Rental Payment</h1> <!-- Level 1 heading -->
+<form action="{{ url_for('record_rental_payment') }}" method="post"> <!-- Starts HTML form element for sending data to server-->
+    <div> <!-- Start a new group -->
+        <label for="apartment_number">Apartment Number:</label> <!-- Description of user input box -->
+        <input type="number" id="apartment_number" name="apartment_number" required> <!-- Creates a num input field -->
     </div>
-    <div>
-        <label for="month">Month:</label>
-        <input type="month" id="month" name="month" required>
+    <div> <!-- Start a new group -->
+        <label for="month">Month:</label> <!-- Description of user input box -->
+        <input type="month" id="month" name="month" required> <!-- Creates a month input field -->
     </div>
-    <div>
-        <label for="amount">Amount:</label>
-        <input type="number" id="amount" name="amount" step="0.01" required>
+    <div> <!-- Start a new group -->
+        <label for="amount">Amount:</label> <!-- Description of user input box -->
+        <input type="number" id="amount" name="amount" required> <!-- Creates a num input field -->
     </div>
-    <div>
-        <input type="submit" value="Submit">
+    <div> <!-- Start a new group -->
+        <input type="submit" value="Submit"> <!-- Create a clickable button -->
     </div>
-</form>
-{% endblock %}
+</form> <!-- Closes the form element -->
+{% endblock %} <!-- End override block -->

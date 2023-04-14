@@ -1,26 +1,27 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} <!-- Load template -->
 
-{% block content %}
-    <h1>Record Expense</h1>
-    <form action="{{ url_for('record_expense') }}" method="post">
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required>
+{% block content %} <!-- Override template -->
+    <h1>Record Expense</h1> <!-- Level 1 heading -->
+    <form action="{{ url_for('record_expense') }}" method="post">  <!-- Starts HTML form element for sending data to server-->
+        <label for="date">Date:</label> <!-- Description of user input box -->
+        <input type="date" id="date" name="date" required> <!-- Creates a new date input field -->
         <br>
-        <label for="payee">Payee:</label>
-        <input type="text" id="payee" name="payee" required>
+        <label for="payee">Payee:</label> <!-- Description of user input box -->
+        <input type="text" id="payee" name="payee" required> <!-- Creates a new text input field -->
         <br>
-        <label for="amount">Amount:</label>
-        <input type="number" step="0.01" id="amount" name="amount" required>
+        <label for="amount">Amount:</label> <!-- Description of user input box -->
+        <input type="number" id="amount" name="amount" required> <!-- Creates a num input field -->
         <br>
-        <label for="category">Category:</label>
-        <select id="category" name="category" required>
+        <label for="category">Category:</label> <!-- Description of user input box -->
+        <select id="category" name="category" required> <!-- Creates a new num input field -->
+            <!-- Create categoriies for entry box -->
             <option value="Mortgage">Mortgage</option>
             <option value="Repairs">Repairs</option>
             <option value="Utilities">Utilities</option>
             <option value="Taxes">Taxes</option>
             <option value="Insurance">Insurance</option>
         </select>
-        <br>
-        <input type="submit" value="Submit">
-    </form>
+        <br> <!-- Line break -->
+        <input type="submit" value="Submit"> <!-- Create a clickable button -->
+    </form> <!-- Closes the form element -->
 {% endblock %}

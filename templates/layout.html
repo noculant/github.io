@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rent Manager</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> <!-- connects css  -->
-</head>
-<body>
-    <nav>
-        <a href="{{ url_for('index') }}">Home</a>
-    </nav>
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+<!DOCTYPE html> <!-- Declares document type as HTML5 -->
+<html lang="en"> <!-- Sets language to english -->
+<head> <!-- Beginning of head section -->
+    <meta charset="UTF-8"> <!-- Sets character encoding to UTF-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Sets compatibility to IE-edge -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Declares document type as HTML5 -->
+    <title>Rent Manager</title> <!-- Sets the viewport properties, making the page responsive to most devices -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> <!-- Connects to CSS file -->
+</head> <!-- End of head section -->
+<body> <!-- Beginning of body section -->
+    <nav> <!-- Start of navigation section -->
+        <a href="{{ url_for('index') }}">Home</a> <!-- This line creates a link to the home page -->
+    </nav> <!-- End of navigation section -->
+    <main> <!-- Start of main section -->
+        {% block content %}{% endblock %} <!-- Conent block that other pages override -->
+    </main> <!-- End of main section -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script> <!-- connects js  -->
-</body>
-</html>
+</body> <!-- End of body section -->
+</html> <!-- End of layout file -->

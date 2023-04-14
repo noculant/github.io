@@ -1,44 +1,46 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} <!-- Load template -->
 
-{% block content %}
-    <h1 class="my-4">Annual Report</h1>
+{% block content %} <!-- Override template -->
+    <h1 class="my-4">Annual Report</h1> <!-- Level 1 heading -->
+    <div class="card"> <!-- Card class for styling -->
+        <div class="card-body"> <!-- Card body for styling -->
+            <h4 class="card-title">Total Rental Income:</h4> <!-- Card title for styling -->
+            <p class="card-text display-4">{{ annual_report.total_rental_income }}</p> <!-- Paragraph -->
+        </div> <!-- End div-->
+    </div> <!-- End div-->
+    <div class="card my-4">  <!-- Card class for styling (my-4) -->
+        <div class="card-body"> <!-- Card body for styling -->
+            <h4 class="card-title">Total Expenses:</h4> <!-- Card title for styling -->
+            <p class="card-text display-4">{{ annual_report.total_expenses }}</p> <!-- Paragraph -->
+        </div>
+    </div>
     <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Total Rental Income:</h4>
-            <p class="card-text display-4">{{ annual_report.total_rental_income }}</p>
-        </div>
-    </div>
-    <div class="card my-4">
-        <div class="card-body">
-            <h4 class="card-title">Total Expenses:</h4>
-            <p class="card-text display-4">{{ annual_report.total_expenses }}</p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Net Profit:</h4>
-            <p class="card-text display-4">{{ annual_report.profit }}</p>
-        </div>
-    </div>
+        <div class="card-body"> <!-- Card body for styling -->
+            <h4 class="card-title">Net Profit:</h4> <!-- Card title for styling -->
+            <p class="card-text display-4">{{ annual_report.profit }}</p> <!-- Paragraph -->
+        </div> <!-- End div-->
+    </div> <!-- End div-->
 
-    <div class="card my-4">
-        <div class="card-body">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Category</th>
+    <div class="card my-4"> <!-- Card class for styling (my-4) -->
+        <div class="card-body"> <!-- Card body for styling -->
+            <table class="table"> <!-- Creates a table element -->
+                <thead> <!-- Table head element -->
+                    <tr> <!-- New table row -->
+                        <!-- 2 table headers -->
+                        <th scope="col">Category</th> 
                         <th scope="col">Total Expense</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for category, total_expense in annual_report.total_expenses_by_category.items() %}
-                        <tr>
+                    </tr> <!-- End table row -->
+                </thead> <!-- End table head element -->
+                <tbody> <!-- Table body element -->
+                    {% for category, total_expense in annual_report.total_expenses_by_category.items() %} <!-- Iterate through categories -->
+                        <tr> <!-- New table row -->
+                            <!-- 2 table data elements -->
                             <td>{{ category }}</td>
                             <td>{{ total_expense }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
-{% endblock %}
+                        </tr> <!-- End table row -->
+                    {% endfor %} <!-- End for loop -->
+                </tbody> <!-- End table body element -->
+            </table> <!-- End table -->
+        </div> <!-- End div-->
+    </div> <!-- End div-->
+{% endblock %} <!-- End override block -->
