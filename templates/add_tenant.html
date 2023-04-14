@@ -3,20 +3,15 @@
 {% block content %} <!-- Override template -->
 <h1>Add New Tenant</h1> <!-- Level 1 heading -->
 <form action="{{ url_for('add_tenant') }}" method="post"> <!-- Starts HTML form element for sending data to server-->
-    <div class="form-group"> <!-- Start a new group -->
-        <label for="name">Name:</label> <!-- Description of user input box -->
-        <input type="text" id="name" name="name" required> <!-- Creates a new text input field -->
-    </div>
-    <div class="form-group"> <!-- Start a new group -->
-        <label for="apartment_number">Apartment Number:</label> <!-- Description of user input box -->
-        <input type="number" id="apartment_number" name="apartment_number" required> <!-- Creates a new num input field -->
-    </div>
-    <div class="form-group"> <!-- Start a new group -->
-        <label for="rate">Rent Rate:</label> <!-- Description of user input box -->
-        <input type="number" id="rate" name="rate" required>  <!-- Creates a num input field -->
-    </div>
-    <div class="form-group"> <!-- Start a new group -->
-        <input type="submit" value="Submit"> <!-- Create a clickable button -->
-    </div>
+    <label for="name">Name:</label> <!-- Description of user input box -->
+    <input type="text" id="name" name="name" required> <!-- Creates a new text input field -->
+    <br> <!-- Line break -->
+    <label for="apartment_number">Apartment Number:</label> <!-- Description of user input box -->
+    <input type="number" id="apartment_number" name="apartment_number" required> <!-- Creates a new num input field -->
+    <br>
+    <label for="rate">Rent Rate:</label> <!-- Description of user input box -->
+    <input type="number" id="rate" name="rate" required>  <!-- Creates a num input field -->
+    <br>
+    <input type="submit" value="Submit"> <!-- Create a clickable button -->
 </form> <!-- Closes the form element -->
 {% endblock %} <!-- End override block -->
