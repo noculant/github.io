@@ -2,6 +2,7 @@ from tenant_class import Tenant
 from rental_income_record_class import RentalIncomeRecord
 from expense_record_class import ExpenseRecord
 from annual_report_class import AnnualReport
+from file_io import save_data, load_data
 
 class Landlord:
     """
@@ -9,7 +10,7 @@ class Landlord:
     the list of tenants, income record, expense record, and annual record are stored and 
     accessed by the front end via Flask.
     """
-    def __init__(self):
+    def __init__(self, tenant_filename='tenants.txt'):
         """
         Constructs the list of tenants, the rental income record, expense record, 
         and the annual report using data from the previous two.
@@ -19,7 +20,8 @@ class Landlord:
         expense_record: The list of payments the landlord made 
         annual_report: The annual report that calulates profit and categorical sums
         """
-        self.tenant_list = []
+        self.tenant_filename = tenant_filename
+        self.tenant_list = [Tenant(**tenant) for tenant in load_data(self.tenant_filename)]
         self.rental_income_record = RentalIncomeRecord()
         self.expense_record = ExpenseRecord()
         self.annual_report = AnnualReport(self.rental_income_record, self.expense_record)
@@ -32,8 +34,9 @@ class Landlord:
         name: The name of the tenant
         rate: The monthly rate for the apartment
         """
-        new_tenant = Tenant(aptNum, name, rate)
+        new_tenant = Tenant(name, aptNum, rate)
         self.tenant_list.append(new_tenant)
+        save_data(self.tenant_filename, [t.__dict__ for t in self.tenant_list])
 
     def record_rental_income(self, aptNum, amount, date):
         """

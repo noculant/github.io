@@ -13,3 +13,4 @@ class Tenant:
         self.name = name
         self.apartment_number = apartment_number
         self.rate = rate
+

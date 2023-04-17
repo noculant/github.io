@@ -10,13 +10,13 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 # Create the landlord object(tenant list, income record, expense record, annual report)
-landlord = Landlord()
+landlord = Landlord('tenants.txt')
 
 # Display the home page
 @app.route('/')
 def index():
     return render_template('index.html')
-
+    
 """
 --------------------------------- ADD TENANT PAGE ---------------------------------
 """
