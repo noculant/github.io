@@ -9,11 +9,11 @@
         <th>Month</th>
         <th>Amount</th>
     </tr> <!-- End table row -->
-    {% for income_record in income_records %} <!-- Iterate through income records -->
+    {% for income_record in rental_income_records %} <!-- Iterate through income records -->
     <tr> <!-- New table row -->
         <!-- 3 table data elements -->
         <td>{{ income_record.apartment_number }}</td>
-        <td>{{ income_record.month }}</td>
+        <td>{{ income_record.date }}</td>
         <td>{{ income_record.amount }}</td>
     </tr> <!-- End table row -->
     {% endfor %} <!-- End for loop -->

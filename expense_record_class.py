@@ -1,15 +1,18 @@
+from file_io import save_data, load_data
+
 class ExpenseRecord:
     """
     Represents the list of expenses from the landlord.
     """
-    def __init__(self):
+    def __init__(self, expense_filename='expense_records.txt'):
         """
         Constructs a list for the expense record to hold the 
         information for each expense.
 
         expense_records: The list of expenses
         """
-        self.expense_records = []
+        self.expense_filename = expense_filename
+        self.expense_records = load_data(self.expense_filename)
 
     def add_expense(self, date, payee, amount, category):
         """
@@ -28,6 +31,7 @@ class ExpenseRecord:
             "category": category
         }
         self.expense_records.append(expense)
+        save_data(self.expense_filename, self.expense_records)
 
     def get_total_expenses(self):
         """

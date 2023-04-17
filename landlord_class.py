@@ -10,7 +10,7 @@ class Landlord:
     the list of tenants, income record, expense record, and annual record are stored and 
     accessed by the front end via Flask.
     """
-    def __init__(self, tenant_filename='tenants.txt'):
+    def __init__(self, tenant_filename='tenants.txt', rental_income_filename='rental_income_records.txt', expense_filename='expense_records.txt'):
         """
         Constructs the list of tenants, the rental income record, expense record, 
         and the annual report using data from the previous two.
@@ -22,8 +22,8 @@ class Landlord:
         """
         self.tenant_filename = tenant_filename
         self.tenant_list = [Tenant(**tenant) for tenant in load_data(self.tenant_filename)]
-        self.rental_income_record = RentalIncomeRecord()
-        self.expense_record = ExpenseRecord()
+        self.rental_income_record = RentalIncomeRecord(rental_income_filename)
+        self.expense_record = ExpenseRecord(expense_filename)
         self.annual_report = AnnualReport(self.rental_income_record, self.expense_record)
 
     def add_tenant(self, aptNum, name, rate):
@@ -38,7 +38,7 @@ class Landlord:
         self.tenant_list.append(new_tenant)
         save_data(self.tenant_filename, [t.__dict__ for t in self.tenant_list])
 
-    def record_rental_income(self, aptNum, amount, date):
+    def record_rental_income(self, month, aptNum, amount):
         """
         Appends a new tenant to the list of tenants
 
@@ -46,7 +46,7 @@ class Landlord:
         amount: The amount payed by tenant
         date: The date of the payment
         """
-        self.rental_income_record.add_income(aptNum, amount, date)
+        self.rental_income_record.add_income(month, aptNum, amount)
 
     def record_expense(self, description, amount, date):
         """
