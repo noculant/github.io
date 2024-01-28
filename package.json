@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/noculant/noculant.github.io#readme",
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
     "tailwindcss": "^3.3.1"
   }
 }
