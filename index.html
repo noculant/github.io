@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noculant</title>
     <link href="/src/output.css" rel="stylesheet">
+    <link href="/src/nclt.css" rel="stylesheet">
 </head>
 <body>
-    <header class="grid grid-cols-1 sm:grid-cols-12 py-4 sm:py-12">
-        <div class="col-span-1 sm:col-start-2 flex justify-center sm:justify-start">
-            <img class="w-32 sm:w-40" src="assets/Noculant_Logo.png" alt="Noculant Logo">
+    <header class="header" id="Header">
+        <div class="logo-container">
+            <img src="assets/Noculant_Logo.png" alt="Noculant Logo" class="logo">
         </div>
-        <div class="flex col-span-1 sm:col-end-12 justify-center sm:justify-end gap-4 sm:gap-8 py-4">
-            <a class="font-bold hover:underline hover:cursor-pointer">HOME</a>
-            <a class="font-bold hover:underline hover:cursor-pointer">PRODUCTS</a>
-            <a class="font-bold text-nowrap hover:underline hover:cursor-pointer">OUR TEAM</a>
-            <a class="font-bold text-nowrap hover:underline hover:cursor-pointer">CONTACT US</a>
-        </div>
+        <nav class="navbar">
+            <a href="#Header" class="nav-link">HOME</a>
+            <a href="#Products" class="nav-link">PRODUCTS</a>
+            <a href="#MeetTheTeam" class="nav-link">OUR TEAM</a>
+            <a href="#Contact" class="nav-link">CONTACT US</a>
+        </nav>
     </header>
     <main>
         <section id="Hero" class="flex flex-col sm:flex-row justify-center my-10 sm:my-20 px-8 sm:px-40 gap-8 sm:gap-12 items-center">
@@ -132,7 +133,7 @@
             </form>
         </section>
     </main>
-    <footer class="flex flex-col sm:flex-row py-8 px-8 sm:px-20 justify-evenly bg-gray-950 w-full text-white items-center gap-4">
+    <footer class="flex flex-col xl:flex-row py-8 px-8 sm:px-20 justify-evenly bg-gray-950 w-full text-white items-center gap-4">
         <div>
             <h1>Created by <span class="font-bold">Noculant Inc.</span></h1>
             <div class="flex gap-4 text-xs font-light">
@@ -140,11 +141,11 @@
                 <p>Privacy Policy</p>
             </div>
         </div>
-        <div class="flex gap-8">
-            <p class="md:font-bold">HOME</p>
-            <p>PRODUCTS</p>
-            <p>OUR TEAM</p>
-            <p>CONTACT US</p>
+        <div class="flex gap-8 text-center ">
+            <a class="hover:text-slate-300" href="#Header">HOME</a>
+            <a class="hover:text-slate-300" href="#Products">PRODUCTS</a>
+            <a class="hover:text-slate-300" href="#MeetTheTeam">OUR TEAM</a>
+            <a class="hover:text-slate-300" href="#Contact">CONTACT US</a>
         </div>
         <div>
             <p>&COPY; 2024 Noculant Inc. All Rights Reserved</p>

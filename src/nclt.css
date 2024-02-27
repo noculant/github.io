@@ -1,0 +1,87 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 10rem 0 10rem;
+
+}
+
+.logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; /* Align logo to the left */
+}
+
+.logo {
+    max-width: 150px; /* Maximum logo width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.navbar {
+    flex: 2;
+    display: flex;
+    justify-content: flex-end; /* Align navigation to the right */
+    gap: 16px; /* Space between navigation links */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #333/* Example text color */
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .header {
+        padding: 25px 5rem 0 5rem; /* Reduce padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 25px 2rem 0 2rem; /* Reduce padding */
+    }
+}
+
+@media (max-width: 640px) {
+    .header {
+        flex-direction: column;
+        align-items: center; /* Align items to the start in a column layout */
+    }
+    .navbar {
+        justify-content: center; /* Center navigation links in a column layout */
+        width: 100%; /* Full width navigation */
+        margin-top: 16px; /* Space between logo and navigation in a column layout */
+    }
+
+    .nav-link {
+        display: block; /* Stack links vertically */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 25px 1rem 0 1rem; /* Reduce padding */
+    }
+    .navbar {
+        font-size: 0.9rem; /* Reduce font size */
+    }
+}
+
+@media (max-width: 375px) {
+    .navbar {
+        font-size: 0.8rem; /* Reduce font size */
+    }
+}
